@@ -415,7 +415,7 @@ class ApplicationSubcommand:
         self.type: Optional[ApplicationCommandOptionType] = cmd_type
         self._self_argument: Optional[ClientCog] = self_argument
         self.name: Optional[str] = name
-        self._description: str = description
+        self._description: str = description or callback.__doc__
 
         self.options: Dict[str, CommandOption] = {}
         self.children: Dict[str, ApplicationSubcommand] = {}
